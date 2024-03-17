@@ -1,0 +1,228 @@
+System komputerowy
+Przerwanie
+Sterownik urządzenia
+Oprogramowanie niezależne od urządzenia
+Oprogramowanie poziomu użytkownika
+Procesor
+rejestry
+rdzeni obliczeniowych
+Pamięć ROM
+Pamięć RAM
+Przestrzeń adresowa
+pamięci wirtualnej
+segmentacji
+selektory
+Deskryptor
+Tablica deskryptorów
+tablicy plików
+I-węzeł
+stronicowaniem
+katalog stron
+tablicę stron
+Dysk twardy
+Ścieżka
+Cylinder
+sektory
+ECC
+Formatowanie niskopoziomowe
+przeplot
+przekos
+Partycjonowanie
+Formatowanie wysokopoziomowe
+Defragmentacja
+RAID
+RAID 0
+RAID 1
+RAID 2
+RAID 3
+RAID 4
+RAID 5
+RAID 6
+BIOS
+UEFI
+MBR
+GPT
+Program rozruchowy
+Proces
+Demon
+Systemd
+proces główny
+proces nadrzędny
+proces podrzędny 
+identyfikator PID
+identyfikator PPID
+Wątek
+identyfikator TID
+Sygnał
+Region krytyczny 
+Muteks
+Semafor
+Monitor (mechanizm synchronizujący)
+Bariera
+Program szeregujący
+algorytmami szeregowania
+algorytm szeregowania bez wywłaszczania
+algorytm szeregowania z wywłaszczaniem
+procesy zorientowane na obliczenia
+procesy zorientowane na wejście-wyjście
+Pierwszy zgłoszony, pierwszy obsłużony
+Najkrótszy zadania najpierw obsłużone
+Szeregowanie cykliczne
+Szeregowanie według priorytetów
+Szeregowanie z wykorzystaniem kolejki priorytetów
+Szeregowanie gwarantowane
+Szeregowanie loteryjne
+Algorytm szeregowania RMS
+Algorytm szeregowania EDF
+Algorytm szeregowania LLF
+Zakleszczenie
+zasoby z możliwością wywłaszczania
+zasoby bez możliwości wywłaszczania
+Algorytm strusia
+Algorytm bankiera
+Zakleszczenie komunikacyjne
+Uwięzienie
+Zagłodzenie
+Tylne drzwi
+Fałszywe logowanie
+Fałszywy adres IP
+Uniemożliwienie dostępu (DoS)
+rozproszone uniemożliwienie dostępu
+Atak pośrednika (man in the middle)
+Exploit
+Zero-day exploit
+atak z wykorzystaniem przepełnienie bufora
+Złośliwe oprogramowanie
+Zombie
+Botnet
+Wirus
+dropper
+Robak
+Koń trojański 
+Bomba logiczna
+bomby czasowe
+Rootkit
+Oprogramowanie szpiegujące
+przejmowania przeglądarki
+Rejestrator klawiatury
+Oprogramowanie żądające okupu
+metodą automatycznego pobierania
+Zapora sieciowa
+Program zwalczający złośliwe oprogramowanie
+Skaner antywirusowy
+Weryfikatory integralności 
+Weryfikatory zachowań
+Podpisywanie kodu podpisem cyfrowym
+Wtrącanie do więzienia
+Izolowanie
+demon cron
+użytkownik root
+sudo
+/etc/passwd
+UID
+GID
+/etc/group
+/etc/shadow
+PAM 
+/etc/pam.d/ (. /etc/pam.d/login, /etc/pam.d/passwd, /etc/pam.d/su.)
+Funkcja pojedynczego logowania
+syslog
+systemd
+Nagios
+Wirtualizacja
+Hipernadzorca
+hipernadzorca typu 1 (VMware ESXi, XenServer)
+hipernadzorca typu 2 (Oracle VirtualBox, QEMU)
+pełna wirtualizacja
+parawirtualizacja
+wirtualizacja wspomagana sprzętowo
+Sterowniki parawirtualne
+Migracja w locie
+Obraz maszyny wirtualnej
+Konteneryzacja
+licencją publiczną GNU
+Standard POSIX
+Ładowalne moduły
+System32
+NTOS
+Interix
+Windows Subsystem for Linux
+NT API
+Win32 API
+Rejestr systemu 
+Menedżer zadań
+msconfig
+System operacyjny
+tryb jądra
+tryb użytkownika
+spooling
+podziału czasu
+standard POSIX
+System plików
+plik zwykły
+katalog
+plik specjalny
+urządzenie blokowe (ang. block device file)
+urządzenie znakowe (ang. character device file)
+dowiązanie twarde
+dowiązanie symboliczne
+gniazdo
+potok nazwany
+/
+/bin
+/boot
+/dev\
+/etc
+/home
+/lib
+/lost+found
+/mnt
+/opt
+/proc
+/root
+/run
+/sbin
+/sys
+/tmp
+/usr
+/var
+Rozszerzenia nazwy pliku
+Pliki ukryte
+Pliki startowe
+Bezwzględna ścieżka dostępu
+Względna ścieżka dostępu
+prawo czytania 
+prawo zapisu
+prawo wykonywania 
+bit SUID
+bit SGID 
+bit lepkości
+Powłoka
+znaku zachęty
+skrypt powłoki
+Zmienne środowiskowe
+HOME
+PATH
+PWD
+USER
+LANG
+SHELL
+IFS
+PS1
+PS2
+~/.bash_history
+/etc/profile
+~/.bash_profile
+~/.bash_login
+~/.profile
+~/.bash_logout
+/etc/bashrc
+~/.bashrc
+Podpowłoka
+Deskryptor pliku
+Przekierowanie
+standardowy strumień wejścia
+standardowy strumień wyjścia
+standardowy strumień błędów
+exec
+Potok
