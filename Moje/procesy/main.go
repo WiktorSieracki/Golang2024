@@ -3,7 +3,9 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"os"
 	"os/exec"
+	"syscall"
 )
 
 func main() {
@@ -13,7 +15,7 @@ func main() {
     cmd.Stdout = &out
     err := cmd.Run()
     if err != nil {
-        fmt.Println("Error:", err)
+        panic(err)
     } else {
         fmt.Println("Output:")
         fmt.Println(out.String())
@@ -27,7 +29,7 @@ func main() {
     cmd.Stdout = &grepOut
     err = cmd.Run()
     if err != nil {
-        fmt.Println("Nie znaleziono dopasowania:", err)
+        panic(err)
     } else {
         fmt.Println("Znaleziono dopasowanie:")
         fmt.Println(grepOut.String())
@@ -38,14 +40,22 @@ func main() {
 	cmd = exec.Command("sleep", "5")
     err = cmd.Start()
     if err != nil {
-        fmt.Print(err)
-        return
+        panic(err)
     }
-
-	
     fmt.Printf("PID %d\n", cmd.Process.Pid)
     err = cmd.Wait()
     if err != nil {
-        fmt.Print(err)
+        panic(err)
     }
+
+
+	pid := 26053
+	process, err := os.FindProcess(pid)
+	if err != nil {
+		panic(err)
+	}
+	err = process.Signal(syscall.SIGINT)
+	if err != nil {
+		panic(err)
+	}
 }
