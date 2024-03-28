@@ -10,7 +10,7 @@ func dobry_pesel(pesel string)bool  {
 	pesel_chars := []rune(pesel)
 	sprawdzacz :=[...]int{1,3,7,9,1,3,7,9,1,3}
 	dodane:=0
-	for i,_ := range sprawdzacz{
+	for i := range sprawdzacz{
 		pesel_razy_sprawdzacz:=sprawdzacz[i]*int(pesel_chars[i]-'0')
 		dodane+=(pesel_razy_sprawdzacz%10)
 	}
