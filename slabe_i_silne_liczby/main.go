@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"math/big"
 	"strings"
 )
+
+var amount_of_executions [31]int
 
 
 func factorial(n uint64) *big.Int {
@@ -16,6 +19,7 @@ func factorial(n uint64) *big.Int {
 }
 
 func fib(n int) int {
+	amount_of_executions[n]+=1
 	if n == 0 {
 		return 0
 	}else if n == 1 {
@@ -56,6 +60,22 @@ func main() {
 
 	// -------------------------------------------------------
 
-	WeakNumber := fib(30)
-	fmt.Println(WeakNumber)
+	fib(30)
+	// fmt.Println(fib_30)
+	// fmt.Println(amount_of_executions)
+	var absolute_executions_minus_strong [31]float64
+	for i,v := range amount_of_executions {
+		absolute_executions_minus_strong[i]=math.Abs(float64(v-StrongNumber))
+	}
+	// fmt.Println(absolute_executions_minus_strong)
+	min := math.MaxFloat64
+	var index int
+	for i,v := range absolute_executions_minus_strong{
+		if v < min {
+			min = v
+			index = i
+		}
+	}
+	WeanNumber := index
+	fmt.Println(WeanNumber)
 }
