@@ -17,13 +17,17 @@ func CountFibonacciExecutions(n int) (result int, amountOfExecutions []int){
 	var helper func(int) int
 	helper = func(n int) int {
 		amount_of_executions[n] += 1
-		if n == 0 {
-			return 0
-		} else if n == 1 {
-			return 1
-		} else {
-			return helper(n-1) + helper(n-2)
+		if n <= 1 {
+			return n
 		}
+		return helper(n-1) + helper(n-2)
 	}
 	return helper(n), amount_of_executions
+}
+
+func Fibonacci(n int) int {
+	if n <= 1 {
+		return n
+	}
+	return Fibonacci(n-1) + Fibonacci(n-2)
 }

@@ -11,7 +11,6 @@ func FindStrongNumber(nick string) int {
 	for i, v := range nick {
 		ascii_nick_array[i] = int(v)
 	}
-	fmt.Println(ascii_nick_array)
 	var count uint64 = 0
 	for {
 		number_of_contains := 0
