@@ -4,10 +4,10 @@ import (
 	"math/big"
 )
 
-func Factorial(n uint64) *big.Int {
+func Factorial(n int) *big.Int {
     result := big.NewInt(1)
-    for i := uint64(2); i <= n; i++ {
-        result.Mul(result, big.NewInt(0).SetUint64(i))
+    for i := 2; i <= n; i++ {
+        result.Mul(result, big.NewInt(int64(i)))
     }
     return result
 }

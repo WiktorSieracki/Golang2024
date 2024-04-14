@@ -1,35 +1,37 @@
 package main
 
 import (
-	"fmt"
 	"math"
+	"strconv"
 	"strings"
 )
 
-func FindStrongNumber(nick string) int {
-	var ascii_nick_array = make([]int, len(nick))
-	for i, v := range nick {
-		ascii_nick_array[i] = int(v)
-	}
-	var count uint64 = 0
+func CreateAsciiNickArray(nick string) (asciiNickArray []int) {
+    for _, char := range nick {
+        asciiNickArray = append(asciiNickArray, int(char))
+    }
+    return asciiNickArray
+}
+
+func FindStrongNumber(nick string)  (strongNumber int) {
+	var ascii_nick_array = CreateAsciiNickArray(nick)
 	for {
 		number_of_contains := 0
-		BigNumber := Factorial(count)
+		BigNumber := Factorial(strongNumber)
 		for _, v := range ascii_nick_array {
-			if strings.Contains(BigNumber.Text(10), fmt.Sprint(v)) {
+			if strings.Contains(BigNumber.Text(10), strconv.Itoa(v)) {
 				number_of_contains += 1
 			}
 		}
 		if number_of_contains >= len(nick) {
 			break
 		}
-		count += 1
+		strongNumber += 1
 	}
-	return int(count)
+	return strongNumber
 }
 
 func FindWeakNumber(nick string) int {
-	nick = strings.ToLower(nick)
 	StrongNumber := FindStrongNumber(nick)
 	_, amount_of_executions := CountFibonacciExecutions(30)
 	var absolute_executions_minus_strong [31]float64

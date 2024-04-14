@@ -11,6 +11,12 @@ import (
 func main() {
 	nick := PrepareNick("WikSie")
 	// nick := PrepareNick("pioarl")
+
+	ascii_array := CreateAsciiNickArray(nick)
+	fmt.Println(ascii_array)
+
+
+	// -------------------------------------------------------
 	StrongNumber := FindStrongNumber(nick)
 	fmt.Printf("Strong number: %d\n", StrongNumber)
 
@@ -25,7 +31,7 @@ func main() {
 	_ = Fibonacci(42)
 
 	end := time.Since(start)
-	fmt.Printf("Execution time: %v\n", end)
+	fmt.Printf("Execution time for Fibonacci(42): %v\n", end)
 
 	// -------------------------------------------------------
 	// 2^257 seconds in years
