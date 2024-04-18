@@ -287,4 +287,4 @@ Bardzo ciężko jest sobie wyobrazić jak długo by to trwało.
  - goroutines i channels (asynchroniczne obliczanie wartości ciągu Fibonacciego)
 
  ##### Ciekawostka
- Program działa gdy zamiast nicku podamy liczbę, np. `go run . 297` zwróci wartości dla tej liczby. Możesz zastanowić się dlaczego patrząc na funckję [CreateAsciiNickArray()](#czym-jest-silna-liczba?). 🤔
+ Program działa gdy zamiast nicku podamy liczbę, np. `go run . 297` zwróci wartości dla tej liczby. Możesz zastanowić się dlaczego patrząc na funkcję [CreateAsciiNickArray()](#czym-jest-silna-liczba?). 🤔
