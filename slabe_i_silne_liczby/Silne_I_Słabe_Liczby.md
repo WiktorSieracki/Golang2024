@@ -12,10 +12,29 @@
 ---
 Program do zabawy większymi liczbami w GO.  
 Program wylicza 2 liczby na podstawie 3 liter imienia i 3 liter nazwiska.
-Mój "nick" to *WikSie*
+Podanych przez użytkownika.
+Mój "nick" to *WikSie*. `go run . WikSie`  
+Nie podając argumentu program zwróci wartości dla mojego nicku.
 
 ## Początek
-Żeby zacząć operować na "nicku" trzeba zamienić wszystkie litery na ich małe odpowiedniki. Następnie usunąć polskie znaki jeżeli takie występują.  
+
+Program pobiera nick z argumentów podanych przy uruchomieniu programu.
+Jeżeli nie podano argumentu to domyślnie ustawia nick na *WikSie*.
+
+```go
+func GetNick() string {
+    var nick string
+	if len(os.Args) < 2 {
+        nick = "WikSie"
+    }else{
+		nick = os.Args[1]
+	}
+    return nick
+}
+```
+
+
+Następnie, żeby zacząć operować na "nicku" trzeba zamienić wszystkie litery na ich małe odpowiedniki. Następnie usunąć polskie znaki jeżeli takie występują.  
 Służy do tego funkcja `PrepareNick()`
 
 ```go
@@ -226,6 +245,27 @@ end := time.Since(start)
 fmt.Println(end) // 959.5387ms
 ```
 
+Problem w tym rozwiązaniu jest taki że liczba 42 jest liczbą którą trzeba było znaleźć eksperymentalnie.
+
+Lepszym rozwiązaniem jest zastosowanie funkcji Counter(), która oblicza jak największą liczbę ciągu Fibonacciego w czasie 1s.
+
+```go
+func Counter() int {
+	n := 0
+	for {
+		start := time.Now()
+		Fibonacci(n)
+		end := time.Since(start)
+		if end.Seconds() > 1 {
+			return n
+		}
+		n += 1
+	}
+}
+```
+
+Dla zainteresowanego czytelnika warto spojrzeć na asynchroniczne rozwiązanie tego problemu, które znajduje się w pliku [mathFunctions.go](mathFunctions.go) jako funkcja `CounterAsync()`. Jest ono jednak bardziej skomplikowane i nie jest konieczne do zrozumienia reszty programu. 😊
+
 > Zakładając, że funkcja Fibonacci(40) trwa 1s na naszym urządzeniu  
 > Chcąc obliczyć wartość Fibbonacci(297) czyli dla mojej silnej liczby  
 > musielibyśmy czekać $2^{257}$ razy dłużej czyli około $2^{257}$ sekund  
@@ -244,3 +284,7 @@ Bardzo ciężko jest sobie wyobrazić jak długo by to trwało.
  - strings to bardzo przydatna biblioteka ([strings](https://pkg.go.dev/strings))
  - pomiar czasu w GO ([time](https://pkg.go.dev/time))
  - przypomnienie złożoności obliczeniowej (O(2^n) dla funkcji Fibonacci)
+ - goroutines i channels (asynchroniczne obliczanie wartości ciągu Fibonacciego)
+
+ ##### Ciekawostka
+ Program działa gdy zamiast nicku podamy liczbę, np. `go run . 297` zwróci wartości dla tej liczby. Możesz zastanowić się dlaczego patrząc na funckję [CreateAsciiNickArray()](#czym-jest-silna-liczba?). 🤔

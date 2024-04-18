@@ -9,12 +9,11 @@ import (
 
 
 func main() {
-	nick := PrepareNick("WikSie")
-	// nick := PrepareNick("pioarl")
+	nick:= GetNick()
+	fmt.Println("Nick: ", nick)
+	// -------------------------------------------------------
 
-	ascii_array := CreateAsciiNickArray(nick)
-	fmt.Println(ascii_array)
-
+	nick = PrepareNick(nick)
 
 	// -------------------------------------------------------
 	StrongNumber := FindStrongNumber(nick)
@@ -32,9 +31,11 @@ func main() {
 
 	end := time.Since(start)
 	fmt.Printf("Execution time for Fibonacci(42): %v\n", end)
+	fmt.Println("Finding the highest Fibonacci number in 1 seccond: ", Counter())
 
 	// -------------------------------------------------------
 	// 2^257 seconds in years
-	fmt.Println(math.Pow(2,257)/31556952)
+	fmt.Println("2^257 seconds in years: ",math.Pow(2,257)/31556952)
 
+	// -------------------------------------------------------
 }

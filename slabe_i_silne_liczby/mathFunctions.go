@@ -2,6 +2,7 @@ package main
 
 import (
 	"math/big"
+	"time"
 )
 
 func Factorial(n int) *big.Int {
@@ -30,4 +31,37 @@ func Fibonacci(n int) int {
 		return n
 	}
 	return Fibonacci(n-1) + Fibonacci(n-2)
+}
+
+
+func Counter() int {
+	n := 0
+	for {
+		start := time.Now()
+		_ = Fibonacci(n)
+		end := time.Since(start)
+		if end.Seconds() > 1 {
+			return n-1
+		}
+		n += 1
+	}
+}
+
+func CounterAsync() int {
+    n := 0
+    done := make(chan bool)
+    go func() {
+        for {
+            select {
+            case <-done:
+                return
+            default:
+                _ = Fibonacci(n)
+                n++
+            }
+        }
+    }()
+    time.Sleep(time.Second)
+    done <- true
+    return n - 1
 }
