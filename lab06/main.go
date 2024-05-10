@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"time"
 )
 
 
@@ -16,7 +15,6 @@ func plant_trees(tree_amount int, forest []string) []string {
 	for i := range tree_amount {
 		forest[i]=tree
 	}
-	rand.Seed(time.Now().UnixNano())
     rand.Shuffle(len(forest), func(i, j int) { forest[i], forest[j] = forest[j], forest[i] })
 	return forest
 }

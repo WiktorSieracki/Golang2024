@@ -41,7 +41,7 @@ func Counter() int {
 		_ = Fibonacci(n)
 		end := time.Since(start)
 		if end.Seconds() > 1 {
-			return n-1
+			return n
 		}
 		n += 1
 	}
