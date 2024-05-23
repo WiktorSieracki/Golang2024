@@ -19,32 +19,36 @@ func plant_trees(tree_amount int, forest []string) []string {
 	return forest
 }
 
-func strike_tree(){
-	
+func Print_forest(forest []string){
+	for i := range SIZE{
+		for z := range SIZE{
+			fmt.Print(forest[i*SIZE+z])
+		}
+		fmt.Println()
+	}
+}
+func make_forest() []string {
+	forest := make([]string,SIZE*SIZE)
+	for i := range forest {
+		forest[i] = "  "
+	}
+	plant_trees(int(float64(SIZE*SIZE)*0.5),forest)
+	return forest
 }
 
+// func strike_tree(forest []string){
+// }
 
-var SIZE = 10
-var tree = "🌲"
-var fire = "🔥"
-var lightning = "⚡"
+const (
+	SIZE = 40
+	tree = "🌲"
+	fire = "🔥"
+	lightning = "⚡"
+)
 func main() {
-	
-	forest := make([]string,SIZE*SIZE)
+	forest := make_forest()
+	Print_forest(forest)
 
-	for i := range forest {
-        forest[i] = "  "
-    }
-
-	plant_trees(50,forest)
-
-	for i := range SIZE{
-		fmt.Println()
-		for z := range SIZE{
-			fmt.Print(forest[i*10+z])
-		}
-	}
-	fmt.Println()
 
 
 	// fmt.Println(forest)

@@ -34,6 +34,15 @@ func (f1 FractionType[T]) add(f2 FractionType[T]) FractionType[T] {
 	return result.simplify()
 }
 
+func add[T types](f1 FractionType[T]){
+	fmt.Println("hello")
+}
+
+// func (f1 FractionType[T]) add(number int) FractionType[T]{
+// 	return FractionType[T]{f1.numerator + (f1.denominator * number),f1.denominator}.simplify()
+// }
+// Nie można przeciążać funkcji po parametrze
+
 func (f1 FractionType[T]) subtract(f2 FractionType[T]) FractionType[T] {
 	result := FractionType[T]{f1.numerator * f2.denominator - f2.numerator * f1.denominator, f1.denominator * f2.denominator}
 	return result.simplify()
