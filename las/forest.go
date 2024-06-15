@@ -12,6 +12,19 @@ func Print_forest(forest []string, size int) {
 		}
 		fmt.Println()
 	}
+    number_of_trees := 0
+    number_of_fires := 0
+    for _, tree := range forest {
+        switch tree {
+        case TREE:
+            number_of_trees++
+        case FIRE, LIGHTNING:
+            number_of_fires++
+        }
+    }
+    fmt.Printf("Trees: %d, Fires: %d\n", number_of_trees, number_of_fires)
+    percentage := float64(number_of_fires) / float64(number_of_trees) * 100
+    fmt.Printf("Percentage of trees burned: %.2f%%\n", percentage)
 }
 func Make_forest(size int,density float64) []string {
 	forest := make([]string, size*size)
@@ -23,7 +36,7 @@ func Make_forest(size int,density float64) []string {
 }
 
 func plant_trees(tree_amount int, forest []string) []string {
-	if tree_amount>SIZE*SIZE {
+    if tree_amount > *SIZE**SIZE {
 		fmt.Println(SIZE)
 		fmt.Println("TOO MANY TREES!")
 	}
@@ -53,21 +66,21 @@ func Spread_fire(forest []string) []string {
     for len(queue) > 0 {
         i := queue[0]
         queue = queue[1:]
-        if i%SIZE != 0 && forest[i-1] == TREE {
+        if i%*SIZE != 0 && forest[i-1] == TREE {
             forest[i-1] = FIRE
             queue = append(queue, i-1)
         }
-        if i%SIZE != SIZE-1 && forest[i+1] == TREE {
+        if i%*SIZE != *SIZE-1 && forest[i+1] == TREE {
             forest[i+1] = FIRE
             queue = append(queue, i+1)
         }
-        if i >= SIZE && forest[i-SIZE] == TREE {
-            forest[i-SIZE] = FIRE
-            queue = append(queue, i-SIZE)
+        if i >= *SIZE && forest[i-*SIZE] == TREE {
+            forest[i-*SIZE] = FIRE
+            queue = append(queue, i-*SIZE)
         }
-        if i < SIZE*(SIZE-1) && forest[i+SIZE] == TREE {
-            forest[i+SIZE] = FIRE
-            queue = append(queue, i+SIZE)
+        if i < *SIZE*(*SIZE-1) && forest[i+*SIZE] == TREE {
+            forest[i+*SIZE] = FIRE
+            queue = append(queue, i+*SIZE)
         }
     }
     return forest

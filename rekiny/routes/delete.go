@@ -12,6 +12,7 @@ func Delete(data *models.SharkAttacks) http.HandlerFunc {
             if attack.Date == date {
                 *data = append((*data)[:i], (*data)[i+1:]...)
                 w.WriteHeader(http.StatusOK)
+                w.Write([]byte("Data deleted"))
                 return
             }
         }

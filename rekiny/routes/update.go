@@ -18,7 +18,12 @@ func Update(data *models.SharkAttacks) http.HandlerFunc {
             if attack.Date == date {
                 (*data)[i] = updatedData
                 w.WriteHeader(http.StatusOK)
-                return
+                newData, err := json.Marshal(updatedData)
+                if err != nil {
+                    http.Error(w, "Error encoding JSON", http.StatusInternalServerError)
+                }
+                w.Write(newData)
+                return 
             }
         }
         http.Error(w, "No data found for the given date", http.StatusNotFound)
