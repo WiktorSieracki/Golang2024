@@ -4,8 +4,14 @@
 
 - flaga s określa rozmiar lasu (domyślnie 50).  
 - flaga d określa gęstość lasu (domyślnie 0.5).  
-- flaga r pozwala na uruchomienie programu w trybie rekurencyjnym.  
+- flaga r pozwala na uruchomienie programu wiele razy po naciśnięciu klawisza enter.  
 - flaga c uruchamia obliczanie średniej ilości spalonych drzew dla 1000 lasów o różnych gęstościach.  
+
+![las](las.png)
+
+![wyniki](results.png)
+
+Wyniki zapisywane są do pliku `density_results.txt` i na ich podstawie generowany jest wykres `density_plot.png` przy użyciu gnuplota.
 
 ![wykres](density_plot.png)
 
